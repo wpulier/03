@@ -7,8 +7,8 @@ body, html {
 .grid-container {
     display: grid;
     height: 100vh;
-    grid-template-columns: repeat(12, 1fr);  /* More columns for finer control */
-    grid-template-rows: repeat(12, 1fr);    /* More rows for finer control */
+    grid-template-columns: repeat(3, 1fr);
+ grid-template-rows: repeat(4, minmax(100px, auto)); /* Ensures rows are at least 100px tall */
     grid-gap: 5px;
     border: red 1px solid;
 }
@@ -77,8 +77,6 @@ body, html {
     grid-column: span 2;
     grid-row: span 4;
 }
-
-
 
 @media (max-width: 600px) {
     .grid-container {
