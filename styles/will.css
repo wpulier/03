@@ -12,6 +12,20 @@ body, html {
     grid-gap: 10px;
     border: red 1px solid;
 }
+/* 
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 8px; 
+    height: 100vh; 
+} */
+
+/* .item9, .item10 {
+    grid-column: 3; 
+    grid-row: 3 / 5; 
+} */
+
 
 .grid-item {
     background-color: rgb(233, 0, 0);
