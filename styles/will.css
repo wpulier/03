@@ -28,23 +28,23 @@ body, html {
 }
 
 .item1 { 
-    grid-column: span 3; 
-    grid-row: span 2;    
+    grid-column: span 1; 
+    grid-row: span 1;    
 }
 
 .item2 {  
-    grid-column: span 1; 
-    grid-row: span 2;    
+    grid-column: span ; 
+    grid-row: span 1;    
 }
 
 .item3 {  
-    grid-column: span 2;
+    grid-column: span 1;
     grid-row: span 2;
 }
 
 .item4 {  
     grid-column: span 2;
-    grid-row: span 2;
+    grid-row: span 1;
 }
 
 .item5 {  
@@ -53,28 +53,27 @@ body, html {
 }
 
 .item6 {  
-    grid-column: span 2;
+    grid-column: span 1;
     grid-row: span 2;
 }
 
 .item7 {  
     grid-column: span 1;
-    grid-row: span 1;
+    grid-row: span 2;
 }
 
 .item8 {  
     grid-column: span 1;
-    grid-row: span 2;
+    grid-row: span 1;
 }
 
-
 .item9 {  
-    grid-column: span 1;
-    grid-row: span 2;
+    grid-column: span 2;
+    grid-row: span 3;
 }
 
 .item10 {  
-    grid-column: span 2;
+    grid-column: span 1;
     grid-row: span 4;
 }
 
