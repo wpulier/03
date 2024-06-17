@@ -35,21 +35,19 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 5px;
-  border: 1px solid red;
+  gap: 10px; /* Adjusted gap for better spacing */
   box-sizing: border-box;
-  padding: 20px; /* Add some padding to avoid overlap with the navbar */
+  padding: 10px; /* Padding to avoid overlap with the navbar */
 }
 
 .flex-item {
-  flex: 1 1 48%; /* Using percentage for responsive width */
+  width: calc(50% - 10px); /* Two-column layout */
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
   background-color: rgb(233, 0, 0);
   box-sizing: border-box;
-  margin: 5px 0;
 }
 
 .flex-item img,
@@ -59,8 +57,3 @@ body, html {
   object-fit: cover;
 }
 
-@media (max-width: 600px) {
-  .flex-item {
-    flex: 1 1 100%; /* Single column layout for small screens */
-  }
-}
