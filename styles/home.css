@@ -2,6 +2,7 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: hidden; /* Prevent scrolling */
   background-color: rgb(233, 0, 0); /* Match the background color */
   box-sizing: border-box;
 }
@@ -16,76 +17,51 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* Ensure it takes full viewport height */
   background-color: #000000;
   text-align: center;
   z-index: 1001; /* Ensure it is above other content initially */
   position: relative; /* Ensure relative positioning for the button */
+  overflow: hidden; /* Prevent internal scrolling */
 }
 
 .intro video {
   width: 100%;
-  height: auto;
-  max-height: 100vh;
-  object-fit: cover;
+  height: 100%;
+  object-fit: cover; /* Ensure video covers the entire container */
 }
 
 .unmute-button {
   position: absolute;
   bottom: 20px;
   left: 20px;
-  background-color: red;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(255, 0, 0, 0.1);
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 16px;
+  border-radius: 50%;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px; /* Align icon vertically */
   cursor: pointer;
   z-index: 1002; /* Ensure it is above the video */
+  transition: background-color 0.3s ease;
+  padding: 0; /* Ensure the padding does not affect centering */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the icon */
 }
 
-.glitch-out {
-  animation: glitch-out 1s steps(5, end);
-}
-
-@keyframes glitch-out {
-  0% {
-    clip: rect(0, 9999px, 0, 0);
-  }
-  10% {
-    clip: rect(10px, 9999px, 20px, 0);
-  }
-  20% {
-    clip: rect(30px, 9999px, 40px, 0);
-  }
-  30% {
-    clip: rect(50px, 9999px, 60px, 0);
-  }
-  40% {
-    clip: rect(70px, 9999px, 80px, 0);
-  }
-  50% {
-    clip: rect(90px, 9999px, 100px, 0);
-  }
-  60% {
-    clip: rect(110px, 9999px, 120px, 0);
-  }
-  70% {
-    clip: rect(130px, 9999px, 140px, 0);
-  }
-  80% {
-    clip: rect(150px, 9999px, 160px, 0);
-  }
-  90% {
-    clip: rect(170px, 9999px, 180px, 0);
-  }
-  100% {
-    clip: rect(190px, 9999px, 200px, 0);
-  }
+.unmute-button:hover {
+  background-color: rgb(233, 0, 0, 0.5);
 }
 
 .navbar {
-  background-color: red;
-  padding: 10px 0;
+  background-color: rgb(233, 0, 0);
+  padding: 20px 0;
   text-align: center;
   width: 100%; /* Ensure navbar takes full width */
   position: fixed; /* Fix navbar at the top */
@@ -110,7 +86,7 @@ body, html {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.25em;
 }
 
 #mainContent {

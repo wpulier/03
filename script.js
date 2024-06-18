@@ -6,24 +6,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (intro && mainContent && video && unmuteButton) {
         intro.addEventListener('click', function() {
-            // Stop the video and show the main content with glitch effect
+            // Stop the video and show the main content
             video.pause();
             video.currentTime = 0;
-            intro.classList.add('glitch-out'); // Add glitch effect class
-            setTimeout(() => {
-                intro.classList.add('hidden');
-                mainContent.classList.remove('hidden');
-            }, 1000); // Adjust this delay to match the duration of the glitch effect
+            intro.classList.add('hidden');
+            mainContent.classList.remove('hidden');
         });
         intro.style.cursor = 'pointer'; // Indicate that the intro is clickable
 
         unmuteButton.addEventListener('click', function(event) {
             if (video.muted) {
                 video.muted = false;
-                unmuteButton.textContent = 'Mute';
+                unmuteButton.textContent = '🔇'; // Change to mute icon
             } else {
                 video.muted = true;
-                unmuteButton.textContent = 'Unmute';
+                unmuteButton.textContent = '🔊'; // Change to unmute icon
             }
             event.stopPropagation(); // Prevent the click event from reaching the intro div
         });
