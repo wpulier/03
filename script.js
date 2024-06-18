@@ -3,8 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.getElementById('mainContent');
     const video = document.getElementById('introVideo');
     const unmuteButton = document.getElementById('unmuteButton');
+    const spinner = document.getElementById('spinner');
 
-    if (intro && mainContent && video && unmuteButton) {
+    if (intro && mainContent && video && unmuteButton && spinner) {
+        video.addEventListener('canplay', function() {
+            spinner.classList.add('hidden'); // Hide the spinner when the video can play
+        });
+
         intro.addEventListener('click', function() {
             // Stop the video and show the main content
             video.pause();
@@ -25,6 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
             event.stopPropagation(); // Prevent the click event from reaching the intro div
         });
     } else {
-        console.error("Intro, mainContent, video, or unmuteButton element not found");
+        console.error("Intro, mainContent, video, unmuteButton, or spinner element not found");
     }
 });

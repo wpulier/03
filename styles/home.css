@@ -32,13 +32,32 @@ body, html {
   object-fit: cover; /* Ensure video covers the entire container */
 }
 
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 5px solid white;
+  animation: spin 1s linear infinite;
+  z-index: 1003; /* Ensure it is above the video */
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
 .unmute-button {
   position: absolute;
-  bottom: 20%;
-  left: 20%;
+  bottom: 10%;
+  left: 10%;
   width: 100px;
   height: 100px;
-  background-color: rgba(255, 0, 0, 0.1);
+  background-color: rgba(255, 0, 0, 0.5);
   color: white;
   border: none;
   border-radius: 50%;
@@ -56,7 +75,7 @@ body, html {
 }
 
 .unmute-button:hover {
-  background-color: rgb(233, 0, 0, 0.5);
+  background-color: rgba(233, 0, 0, 0.8);
 }
 
 .navbar {
@@ -91,6 +110,8 @@ body, html {
 
 #mainContent {
   background-color: rgb(233, 0, 0);
+  height: 100vh;
+  overflow-y: scroll; /* Allow vertical scrolling */
 }
 
 .flex-container {
