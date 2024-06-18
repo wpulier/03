@@ -2,13 +2,95 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  background-color: rgb(233, 0, 0); /* Match the background color */
   box-sizing: border-box;
+}
+
+.hidden {
+  display: none !important; /* Ensure it overrides any other display settings */
+  visibility: hidden; /* Additionally ensure visibility is hidden */
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+  text-align: center;
+  z-index: 1001; /* Ensure it is above other content initially */
+  position: relative; /* Ensure relative positioning for the button */
+}
+
+.intro video {
+  width: 100%;
+  height: auto;
+  max-height: 100vh;
+  object-fit: cover;
+}
+
+.unmute-button {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1002; /* Ensure it is above the video */
+}
+
+.glitch-out {
+  animation: glitch-out 1s steps(5, end);
+}
+
+@keyframes glitch-out {
+  0% {
+    clip: rect(0, 9999px, 0, 0);
+  }
+  10% {
+    clip: rect(10px, 9999px, 20px, 0);
+  }
+  20% {
+    clip: rect(30px, 9999px, 40px, 0);
+  }
+  30% {
+    clip: rect(50px, 9999px, 60px, 0);
+  }
+  40% {
+    clip: rect(70px, 9999px, 80px, 0);
+  }
+  50% {
+    clip: rect(90px, 9999px, 100px, 0);
+  }
+  60% {
+    clip: rect(110px, 9999px, 120px, 0);
+  }
+  70% {
+    clip: rect(130px, 9999px, 140px, 0);
+  }
+  80% {
+    clip: rect(150px, 9999px, 160px, 0);
+  }
+  90% {
+    clip: rect(170px, 9999px, 180px, 0);
+  }
+  100% {
+    clip: rect(190px, 9999px, 200px, 0);
+  }
 }
 
 .navbar {
   background-color: red;
   padding: 10px 0;
   text-align: center;
+  width: 100%; /* Ensure navbar takes full width */
+  position: fixed; /* Fix navbar at the top */
+  top: 0; /* Align to top */
+  z-index: 1000; /* Ensure it is above other content */
 }
 
 .navbar-menu {
@@ -31,6 +113,10 @@ body, html {
   font-size: 18px;
 }
 
+#mainContent {
+  background-color: rgb(233, 0, 0);
+}
+
 .flex-container {
   display: flex;
   flex-wrap: wrap;
@@ -38,6 +124,7 @@ body, html {
   gap: 10px; /* Adjusted gap for better spacing */
   box-sizing: border-box;
   padding: 10px; /* Padding to avoid overlap with the navbar */
+  margin-top: 60px; /* Adjust this value to be at least equal to the height of the navbar */
 }
 
 .flex-item {
@@ -56,4 +143,3 @@ body, html {
   height: 100%;
   object-fit: cover;
 }
-
